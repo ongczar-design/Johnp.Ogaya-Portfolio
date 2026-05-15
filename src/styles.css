@@ -94,10 +94,6 @@ section {
     @apply h-full w-full object-cover transition duration-500 hover:scale-[1.03];
   }
 
-  .project-link {
-    @apply mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink transition hover:text-clay;
-  }
-
   .contact-link {
     @apply inline-flex items-center gap-3 rounded-full bg-ivory px-5 py-3 text-sm font-semibold text-ink transition hover:bg-clay hover:text-white;
   }

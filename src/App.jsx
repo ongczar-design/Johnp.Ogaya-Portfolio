@@ -223,14 +223,6 @@ function Projects() {
                 </p>
                 <h3 className="mt-3 text-2xl font-semibold text-ink">{project.title}</h3>
                 <p className="mt-3 leading-7 text-muted">{project.description}</p>
-                <a
-                  className="project-link"
-                  href={project.pdf}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  View Drawing Set <ArrowUpRight size={17} />
-                </a>
               </div>
             </article>
           ))}

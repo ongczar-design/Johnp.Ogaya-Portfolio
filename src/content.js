@@ -27,7 +27,7 @@ export const portfolio = {
     body:
       'I am a detail-oriented creator who enjoys turning ideas into calm, useful, and memorable digital work. My background blends communication, design, and implementation, which helps me move smoothly from concept to finished experience.',
     stats: [
-      { value: '5+', label: 'Years Experience' },
+      { value: '10+', label: 'Years Experience' },
       { value: '100+', label: 'Projects Delivered' },
       { value: '10+', label: 'Experienced Using Tools' }
     ]
@@ -113,88 +113,77 @@ export const portfolio = {
       category: 'Joinery Detail',
       description:
         'A custom cafe bar drawing package with rendered presentation views and technical production sheets.',
-      image: cafeBarImage,
-      pdf: '/projects/cafe-bar.pdf'
+      image: cafeBarImage
     },
     {
       title: 'Circular Planter',
       category: 'Feature Joinery',
       description:
         'Curved planter design with visual reference imagery and CNC-ready detailing for fabrication.',
-      image: circularPlanterImage,
-      pdf: '/projects/circular-planter.pdf'
+      image: circularPlanterImage
     },
     {
       title: 'Reception Desk',
       category: 'Furniture Detail',
       description:
         'Reception desk design package combining clean rendered visuals with measured construction drawings.',
-      image: receptionDeskImage,
-      pdf: '/projects/reception-desk.pdf'
+      image: receptionDeskImage
     },
     {
       title: 'Bed Frame',
       category: 'Furniture Detail',
       description:
         'Bedroom furniture technical drawings prepared for review, coordination, and production handoff.',
-      image: bedFrameImage,
-      pdf: '/projects/bed-frame.pdf'
+      image: bedFrameImage
     },
     {
       title: 'Desk',
       category: 'Furniture Detail',
       description:
         'Desk joinery design with rendered preview imagery and detailed drawing sheets for fabrication.',
-      image: deskImage,
-      pdf: '/projects/desk.pdf'
+      image: deskImage
     },
     {
       title: 'Open Bookcase',
       category: 'Cabinetry Detail',
       description:
         'Open bookcase design package showing proportions, shelving layout, and construction details.',
-      image: openBookcaseImage,
-      pdf: '/projects/open-bookcase.pdf'
+      image: openBookcaseImage
     },
     {
       title: 'Library Cabinet',
       category: 'Cabinetry Detail',
       description:
         'Library cabinet drawing package with rendered furniture views and detailed production sheets.',
-      image: libraryCabinetImage,
-      pdf: '/projects/library-cabinet.pdf'
+      image: libraryCabinetImage
     },
     {
       title: 'L-Shape Wall Panel',
       category: 'Wall Panel Detail',
       description:
         'L-shaped wall panel detail with visual material direction and technical drawing documentation.',
-      image: lShapeWallPanelImage,
-      pdf: '/projects/l-shape-wall-panel.pdf'
+      image: lShapeWallPanelImage
     },
     {
       title: 'Arch Wall Panel',
       category: 'Wall Panel Detail',
       description:
         'Arch wall panel concept with warm timber detailing and coordinated sheet documentation.',
-      image: archWallPanelImage,
-      pdf: '/projects/arch-wall-panel.pdf'
+      image: archWallPanelImage
     },
     {
       title: 'Straight Wall Panel',
       category: 'Wall Panel Detail',
       description:
         'Straight wall panel technical package focused on elevation, proportions, and build details.',
-      image: straightWallPanelImage,
-      pdf: '/projects/straight-wall-panel.pdf'
+      image: straightWallPanelImage
     },
     {
       title: 'Cornice and Skirting',
       category: 'Interior Detail',
       description:
         'Cornice and skirting detailing package for coordinated interior joinery installation.',
-      image: corniceSkirtingImage,
-      pdf: '/projects/cornice-skirting.pdf'
+      image: corniceSkirtingImage
     }
   ]
 };

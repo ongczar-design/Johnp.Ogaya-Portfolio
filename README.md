@@ -52,4 +52,4 @@ Edit `src/content.js` to update:
 
 ## Replacing Placeholder Images
 
-The hero image lives in `src/Assets/profile.jpg`. Project preview images live in `src/Assets/projects`, and the linked PDF drawing sets live in `public/projects`.
+The hero image lives in `src/Assets/profile.jpg`, and project preview images live in `src/Assets/projects`.
