@@ -1,15 +1,3 @@
-import archWallPanelImage from './Assets/projects/arch-wall-panel.jpg';
-import bedFrameImage from './Assets/projects/bed-frame.jpg';
-import cafeBarImage from './Assets/projects/cafe-bar.jpg';
-import circularPlanterImage from './Assets/projects/circular-planter.jpg';
-import corniceSkirtingImage from './Assets/projects/cornice-skirting.jpg';
-import deskImage from './Assets/projects/desk.jpg';
-import lShapeWallPanelImage from './Assets/projects/l-shape-wall-panel.jpg';
-import libraryCabinetImage from './Assets/projects/library-cabinet.jpg';
-import openBookcaseImage from './Assets/projects/open-bookcase.jpg';
-import receptionDeskImage from './Assets/projects/reception-desk.jpg';
-import straightWallPanelImage from './Assets/projects/straight-wall-panel.jpg';
-
 export const portfolio = {
   name: 'John',
   role: 'Technical Designer',
@@ -110,80 +98,91 @@ export const portfolio = {
   projects: [
     {
       title: 'Cafe Bar',
+      slug: 'cafe-bar',
       category: 'Joinery Detail',
+      pageCount: 5,
       description:
-        'A custom cafe bar drawing package with rendered presentation views and technical production sheets.',
-      image: cafeBarImage
+        'A custom cafe bar drawing package with rendered presentation views and technical production sheets.'
     },
     {
       title: 'Circular Planter',
+      slug: 'circular-planter',
       category: 'Feature Joinery',
+      pageCount: 4,
       description:
-        'Curved planter design with visual reference imagery and CNC-ready detailing for fabrication.',
-      image: circularPlanterImage
+        'Curved planter design with visual reference imagery and CNC-ready detailing for fabrication.'
     },
     {
       title: 'Reception Desk',
+      slug: 'reception-desk',
       category: 'Furniture Detail',
+      pageCount: 4,
       description:
-        'Reception desk design package combining clean rendered visuals with measured construction drawings.',
-      image: receptionDeskImage
+        'Reception desk design package combining clean rendered visuals with measured construction drawings.'
     },
     {
       title: 'Bed Frame',
+      slug: 'bed-frame',
       category: 'Furniture Detail',
+      pageCount: 3,
       description:
-        'Bedroom furniture technical drawings prepared for review, coordination, and production handoff.',
-      image: bedFrameImage
+        'Bedroom furniture technical drawings prepared for review, coordination, and production handoff.'
     },
     {
       title: 'Desk',
+      slug: 'desk',
       category: 'Furniture Detail',
+      pageCount: 3,
       description:
-        'Desk joinery design with rendered preview imagery and detailed drawing sheets for fabrication.',
-      image: deskImage
+        'Desk joinery design with rendered preview imagery and detailed drawing sheets for fabrication.'
     },
     {
       title: 'Open Bookcase',
+      slug: 'open-bookcase',
       category: 'Cabinetry Detail',
+      pageCount: 4,
       description:
-        'Open bookcase design package showing proportions, shelving layout, and construction details.',
-      image: openBookcaseImage
+        'Open bookcase design package showing proportions, shelving layout, and construction details.'
     },
     {
       title: 'Library Cabinet',
+      slug: 'library-cabinet',
       category: 'Cabinetry Detail',
+      pageCount: 11,
       description:
-        'Library cabinet drawing package with rendered furniture views and detailed production sheets.',
-      image: libraryCabinetImage
+        'Library cabinet drawing package with rendered furniture views and detailed production sheets.'
     },
     {
       title: 'L-Shape Wall Panel',
+      slug: 'l-shape-wall-panel',
       category: 'Wall Panel Detail',
+      pageCount: 3,
       description:
-        'L-shaped wall panel detail with visual material direction and technical drawing documentation.',
-      image: lShapeWallPanelImage
+        'L-shaped wall panel detail with visual material direction and technical drawing documentation.'
     },
     {
       title: 'Arch Wall Panel',
+      slug: 'arch-wall-panel',
       category: 'Wall Panel Detail',
+      pageCount: 3,
       description:
-        'Arch wall panel concept with warm timber detailing and coordinated sheet documentation.',
-      image: archWallPanelImage
+        'Arch wall panel concept with warm timber detailing and coordinated sheet documentation.'
     },
     {
       title: 'Straight Wall Panel',
+      slug: 'straight-wall-panel',
       category: 'Wall Panel Detail',
+      pageCount: 2,
       description:
-        'Straight wall panel technical package focused on elevation, proportions, and build details.',
-      image: straightWallPanelImage
+        'Straight wall panel technical package focused on elevation, proportions, and build details.'
     },
     {
       title: 'Cornice and Skirting',
+      slug: 'cornice-skirting',
       category: 'Interior Detail',
+      pageCount: 2,
       description:
-        'Cornice and skirting detailing package for coordinated interior joinery installation.',
-      image: corniceSkirtingImage
+        'Cornice and skirting detailing package for coordinated interior joinery installation.'
     }
   ]
 };

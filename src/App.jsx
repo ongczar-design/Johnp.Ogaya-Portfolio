@@ -1,16 +1,31 @@
 import {
   ArrowUpRight,
   BriefcaseBusiness,
+  ChevronLeft,
+  ChevronRight,
   Mail,
   MapPin,
   Menu,
   Phone,
   Sparkles,
-  X
+  X,
+  ZoomIn,
+  ZoomOut
 } from 'lucide-react';
 import { useState } from 'react';
 import profileImage from './Assets/profile.jpg';
 import { portfolio } from './content';
+
+const projectPreviewImages = import.meta.glob('./Assets/projects/previews/**/*.jpg', {
+  eager: true,
+  import: 'default'
+});
+
+const getProjectPages = (project) =>
+  Array.from({ length: project.pageCount }, (_, index) => {
+    const page = String(index + 1).padStart(2, '0');
+    return projectPreviewImages[`./Assets/projects/previews/${project.slug}/page-${page}.jpg`];
+  }).filter(Boolean);
 
 const SectionLabel = ({ children }) => (
   <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-clay">
@@ -203,6 +218,28 @@ function Experience() {
 }
 
 function Projects() {
+  const [activeProject, setActiveProject] = useState(null);
+  const [activePage, setActivePage] = useState(0);
+  const [zoom, setZoom] = useState(1);
+  const activePages = activeProject ? getProjectPages(activeProject) : [];
+  const activeImage = activePages[activePage];
+
+  const openProject = (project) => {
+    setActiveProject(project);
+    setActivePage(0);
+    setZoom(1);
+  };
+
+  const closeProject = () => {
+    setActiveProject(null);
+    setZoom(1);
+  };
+
+  const goToPage = (index) => {
+    setActivePage((index + activePages.length) % activePages.length);
+    setZoom(1);
+  };
+
   return (
     <section id="projects" className="section-padding">
       <div className="mx-auto max-w-6xl px-5">
@@ -212,22 +249,135 @@ function Projects() {
           text="Selected renderings, production details, and technical drawing packages showcasing recent work completed"
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {portfolio.projects.map((project) => (
+          {portfolio.projects.map((project) => {
+            const pages = getProjectPages(project);
+
+            return (
             <article className="project-card" key={project.title}>
-              <div className="project-image">
-                <img src={project.image} alt={`${project.title} preview`} />
-              </div>
+              <button
+                type="button"
+                className="project-image watermark-surface"
+                onClick={() => openProject(project)}
+                aria-label={`Preview ${project.title}`}
+              >
+                <img
+                  src={pages[0]}
+                  alt={`${project.title} preview`}
+                  draggable="false"
+                  onContextMenu={(event) => event.preventDefault()}
+                />
+                <span className="project-page-count">{pages.length} preview pages</span>
+              </button>
               <div className="p-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay">
                   {project.category}
                 </p>
                 <h3 className="mt-3 text-2xl font-semibold text-ink">{project.title}</h3>
                 <p className="mt-3 leading-7 text-muted">{project.description}</p>
+                <button
+                  type="button"
+                  className="project-open-button"
+                  onClick={() => openProject(project)}
+                >
+                  Open Preview <ZoomIn size={17} />
+                </button>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
+      {activeProject && (
+        <div className="lightbox-backdrop" role="dialog" aria-modal="true" onClick={closeProject}>
+          <div className="lightbox-panel" onClick={(event) => event.stopPropagation()}>
+            <div className="lightbox-header">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay">
+                  {activeProject.category}
+                </p>
+                <h3 className="mt-1 text-2xl font-semibold text-ivory">{activeProject.title}</h3>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  className="lightbox-icon-button"
+                  onClick={() => setZoom((value) => Math.max(0.75, value - 0.25))}
+                  aria-label="Zoom out"
+                >
+                  <ZoomOut size={18} />
+                </button>
+                <button
+                  type="button"
+                  className="lightbox-icon-button"
+                  onClick={() => setZoom((value) => Math.min(2, value + 0.25))}
+                  aria-label="Zoom in"
+                >
+                  <ZoomIn size={18} />
+                </button>
+                <button
+                  type="button"
+                  className="lightbox-icon-button"
+                  onClick={closeProject}
+                  aria-label="Close project preview"
+                >
+                  <X size={19} />
+                </button>
+              </div>
+            </div>
+            <div className="lightbox-stage watermark-surface" onContextMenu={(event) => event.preventDefault()}>
+              <button
+                type="button"
+                className="lightbox-nav left-3"
+                onClick={() => goToPage(activePage - 1)}
+                aria-label="Previous page"
+              >
+                <ChevronLeft size={22} />
+              </button>
+              {activeImage && (
+                <img
+                  src={activeImage}
+                  alt={`${activeProject.title} page ${activePage + 1}`}
+                  className="lightbox-image"
+                  draggable="false"
+                  style={{ transform: `scale(${zoom})` }}
+                  onContextMenu={(event) => event.preventDefault()}
+                />
+              )}
+              <button
+                type="button"
+                className="lightbox-nav right-3"
+                onClick={() => goToPage(activePage + 1)}
+                aria-label="Next page"
+              >
+                <ChevronRight size={22} />
+              </button>
+            </div>
+            <div className="lightbox-footer">
+              <span className="text-sm font-medium text-ivory/70">
+                Page {activePage + 1} of {activePages.length}
+              </span>
+              <div className="lightbox-thumbnails">
+                {activePages.map((page, index) => (
+                  <button
+                    type="button"
+                    className={`lightbox-thumbnail ${index === activePage ? 'is-active' : ''}`}
+                    key={page}
+                    onClick={() => goToPage(index)}
+                    aria-label={`Open page ${index + 1}`}
+                  >
+                    <img
+                      src={page}
+                      alt=""
+                      draggable="false"
+                      onContextMenu={(event) => event.preventDefault()}
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

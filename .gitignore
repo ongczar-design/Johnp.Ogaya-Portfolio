@@ -1,5 +1,6 @@
 node_modules
 dist
+.python-packages
 .env
 .env.local
 .DS_Store

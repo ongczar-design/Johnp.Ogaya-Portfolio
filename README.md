@@ -50,6 +50,6 @@ Edit `src/content.js` to update:
 - Theme colors and fonts are configured in `tailwind.config.js`.
 - Components are organized in `src/App.jsx`.
 
-## Replacing Placeholder Images
+## Project Preview Images
 
-The hero image lives in `src/Assets/profile.jpg`, and project preview images live in `src/Assets/projects`.
+The hero image lives in `src/Assets/profile.jpg`. Project preview pages live in `src/Assets/projects/previews` and are displayed through an image gallery with a lightbox preview. PDF source files are not included in the deployed site.
