@@ -1,13 +1,14 @@
 export const portfolio = {
   name: 'John',
-  role: 'Technical Designer',
+  role: 'Technical Designer | Virtual Assistant | 3D Modeler',
   intro:
     'I believe that good architectural or technical design is not just about creating an intelligent blend of style, form and function. It is also a form of storytelling.',
   location: 'Caloocan, Philippines',
   email: 'johnp.ogaya@gmail.com',
   phoneNumbers: ['+639560375437', '+639493075755'],
   socials: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/john-paulo-ogaya-ab1517237/' }
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/john-paulo-ogaya-ab1517237/' },
+    { label: 'WhatsApp', href: 'https://wa.me/639560375437' }
   ],
   nav: ['About', 'Skills', 'Experience', 'Projects', 'Contact'],
   about: {
@@ -35,7 +36,7 @@ export const portfolio = {
   ],
   experience: [
     {
-      title: 'Technical Designer',
+      title: 'Technical Designer / Virtual Assistant / 3D Modeler',
       company: 'Steinwood UK',
       period: 'Feb 2026 - Present',
       details: [
