@@ -171,10 +171,12 @@ function Experience() {
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-linen text-clay">
                 <BriefcaseBusiness size={21} />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                   <h3 className="text-xl font-semibold text-ink">{job.title}</h3>
-                  <span className="text-sm font-medium text-moss">{job.period}</span>
+                  <span className="shrink-0 text-sm font-medium text-moss sm:ml-6 sm:text-right">
+                    {job.period}
+                  </span>
                 </div>
                 <p className="mt-1 text-sm font-medium uppercase tracking-[0.16em] text-clay">
                   {job.company}
