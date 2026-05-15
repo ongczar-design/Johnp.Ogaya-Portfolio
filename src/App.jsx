@@ -4,6 +4,7 @@ import {
   Mail,
   MapPin,
   Menu,
+  Phone,
   Sparkles,
   X
 } from 'lucide-react';
@@ -249,14 +250,22 @@ function Contact() {
           </p>
           <h2 className="font-display text-4xl md:text-5xl">Let us build something clear and memorable.</h2>
           <p className="mt-5 max-w-xl leading-8 text-ivory/75">
-            Interested in working together? Feel free to reach out for project inquiries, collaborations, or design opportunities.
+            Open to freelance projects, collaborations, and creative opportunities. Let&apos;s create something exceptional together.
           </p>
         </div>
         <div className="rounded-lg border border-white/10 bg-white/5 p-6">
-          <a className="contact-link" href={`mailto:${portfolio.email}`}>
-            <Mail size={19} />
-            {portfolio.email}
-          </a>
+          <div className="flex flex-wrap gap-3">
+            <a className="contact-link" href={`mailto:${portfolio.email}`}>
+              <Mail size={19} />
+              {portfolio.email}
+            </a>
+            {portfolio.phoneNumbers.map((phone) => (
+              <a className="contact-link" href={`tel:${phone}`} key={phone}>
+                <Phone size={19} />
+                {phone}
+              </a>
+            ))}
+          </div>
           <div className="mt-6 flex flex-wrap gap-3">
             {portfolio.socials.map((social) => (
               <a className="social-link" href={social.href} key={social.label}>
