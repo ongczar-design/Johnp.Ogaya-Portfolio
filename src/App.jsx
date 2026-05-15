@@ -249,7 +249,7 @@ function Contact() {
           </p>
           <h2 className="font-display text-4xl md:text-5xl">Let us build something clear and memorable.</h2>
           <p className="mt-5 max-w-xl leading-8 text-ivory/75">
-            Replace this section with your preferred call to action, booking link, or project inquiry details.
+            Interested in working together? Feel free to reach out for project inquiries, collaborations, or design opportunities.
           </p>
         </div>
         <div className="rounded-lg border border-white/10 bg-white/5 p-6">
